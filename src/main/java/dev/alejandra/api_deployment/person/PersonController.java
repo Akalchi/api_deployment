@@ -25,9 +25,10 @@ public class PersonController {
         return repository.save(p);
     }
 
-    @GetMapping("/")
+
+     @GetMapping("/")
     public String home() {
-    return "¡Pipeline funcionando!";
-}
+        return "¡Bienvenido a tu API Spring Boot!";
+    }
 }
 
