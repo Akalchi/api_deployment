@@ -24,5 +24,10 @@ public class PersonController {
     public Person save(@RequestBody Person p) {
         return repository.save(p);
     }
+
+    @GetMapping("/")
+    public String home() {
+    return "¡Pipeline funcionando!";
+}
 }
 
