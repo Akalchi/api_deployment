@@ -26,7 +26,7 @@ public class PersonController {
     }
 
 
-     @GetMapping("/")
+     @GetMapping("/saludo")
     public String home() {
         return "¡Bienvenido a tu API Spring Boot!";
     }

@@ -13,10 +13,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v3
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
 
     - name: Build with Maven
@@ -24,12 +24,12 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t tu-usuario-dockerhub/api_deployment:latest .
+        docker build -t akalchi/api_deployment:latest .
 
     - name: Login to Docker Hub
       run: |
         docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
-      # The 'if' condition using secrets is not supported here and has been removed.
+  
 
     - name: Push Docker image to Docker Hub
       run: |
